@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.card {
+    border: 2px solid red;
+    width: 60vw;
+    display: flex;
+}
+.card .a {
+    display: flex;
+    justify-content: space-around;
+}
+.card .a h2{
+    margin-top: 15px;
+    margin-right:20px;
+}
+.card .a button{
+    margin-right: 10px;
+}
