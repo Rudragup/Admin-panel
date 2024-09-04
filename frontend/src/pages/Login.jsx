@@ -37,7 +37,8 @@ function Login() {
             });
             const result = await response.json();
             const { success, message, jwtToken, name, error } = result;
-            if (success) {
+            console.log(result)
+            if (success!="approvation pending") {
                 handleSuccess(message);
                 localStorage.setItem('token', jwtToken);
                 localStorage.setItem('loggedInUser', name);
@@ -45,13 +46,21 @@ function Login() {
                    if(email !="rudragupta077@gmail.com") navigate('/home');
                    else navigate('/admin');
                 }, 1000)
-            } else if (error) {
+            } 
+            else if(success=="apporvation pending"){
+                handleError("admin not approved yet");
+            }
+            else if (error) {
                 const details = error?.details[0].message;
                 handleError(details);
-            } else if (!success) {
+            } 
+            else if (!success) {
                 handleError(message);
             }
-            console.log(result);
+            else{
+                handleError("admin not approved yet");                   
+            }
+         
         } 
         catch (err) {
             handleError(err);

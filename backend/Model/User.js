@@ -14,8 +14,16 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true,
+    },
+    approved: {
+        type: Boolean,
+        default: false
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
     }
-});
+},{timestamps: true});
 
 const UserModel = mongoose.model('users', UserSchema);
 module.exports = UserModel;

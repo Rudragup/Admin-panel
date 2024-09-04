@@ -14,9 +14,17 @@ const details=async (req,res)=>{
 const Apporve=async (req,res)=>{
   try{
     const {email}=req.body;
-    const resp= await users.deleteOne({"email":email});
+    const resp= await users.findOne({"email":email});
+    if(resp.approved==false){
+    await users.updateOne({"email":email},{$set:{"approved":true}});
+    }
+    else{
+      await users.updateOne({"email":email},{$set:{"approved":false}});
+    }
+    console.log(resp);
+   
 
-    res.status(200).json("data delted");
+    res.status(200).json("approvation done");  
 }
 catch(err){
   res.status(500).json(err);

@@ -19,3 +19,7 @@ body{
 .card .a button{
     margin-right: 10px;
 }
+.card1{
+    border: 2px solid red;
+    display: flex;
+}

@@ -26,8 +26,11 @@ function Admin() {
     {details.map((item)=>{
       console.log(item)
       console.log(item.email);
-      return <Card val={item} />
-    })}
+      if(item.email==="rudragupta077@gmail.com"){
+        return null
+      }
+    else  return <Card val={item} />
+     })}
 
    </div>
    </div>

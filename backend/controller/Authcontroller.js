@@ -44,7 +44,9 @@ const login = async (req, res) => {
             return res.status(403)
                 .json({ message: errorMsg, success: false });
         }
-      
+        if(user.approved === false){
+      return res.status(403).json({message: "User is not approved by admin", success:"approvation pending"});
+        }
         const jwtToken = jwt.sign(
             { email: user.email, _id: user._id },
             "Secert-123",
