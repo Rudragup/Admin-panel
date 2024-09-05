@@ -36,12 +36,13 @@ function Login() {
                 body: JSON.stringify(loginInfo)
             });
             const result = await response.json();
-            const { success, message, jwtToken, name, error } = result;
+            const { success, message, jwtToken, name, error,_id } = result;
             console.log(result)
-            if (success!="approvation pending") {
+            if (success==true) {
                 handleSuccess(message);
                 localStorage.setItem('token', jwtToken);
                 localStorage.setItem('loggedInUser', name);
+                localStorage.setItem('loggedInId',_id);
                 setTimeout(() => {
                    if(email !="rudragupta077@gmail.com") navigate('/home');
                    else navigate('/admin');

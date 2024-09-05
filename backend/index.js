@@ -9,6 +9,7 @@ require('./Model/db.js');
 require('./Model/product.model')
 const app = express();
 
+app.use(express.static("public"));
 const PORT=process.env.PORT;
 
 app.use(bodyParser.json());

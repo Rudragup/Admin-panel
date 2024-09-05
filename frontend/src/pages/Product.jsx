@@ -5,15 +5,26 @@ function Product() {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [quantity, setQuantity] = useState("");
-    
+    const token=localStorage.getItem("token");
+
     const handleproduct = (e) => {
             e.preventDefault();
+            const formData = new FormData();
+            const fileData = document.getElementById('file').files[0];
+            console.log(fileData);
+            formData.append('file', fileData);
+            const response = fetch('http://localhost:8000/product/image', {
+              method: "POST",
+              
+              body:formData
+          });
+  
             const product = {
                 image,
                 name,
                 price,
                 quantity,
-                
+                token
             }
           if(!image && !name && !price && !quantity){
           alert("Please fill all the fields");
@@ -42,7 +53,7 @@ function Product() {
       setPrice(b);
     }
     const changeImage = (e) => {
-        let b=e.target.value;
+    let b=e.target.value;
         setImage(b);
       }
       const changeName = (e) => {
@@ -57,7 +68,7 @@ function Product() {
     <>
     <div>
         <form onSubmit={handleproduct}>
-            <input type="file" onChange={changeImage} value={image}/>
+            <input type="file" id="file" onChange={changeImage} value={image}/>
             Name :<input type="name" value={name} onChange={changeName} />
             <br />
             Price:<input type="number" onChange={changePrice} value={price} />

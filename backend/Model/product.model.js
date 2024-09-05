@@ -20,6 +20,9 @@ quantity:{
     required:true,
     type:Number,
 },
+token:{
+    type:String
+},
 userid:{
     type:Schema.Types.ObjectId,
     ref:'users',

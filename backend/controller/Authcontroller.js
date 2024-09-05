@@ -60,6 +60,7 @@ const login = async (req, res) => {
                 jwtToken,
                 email,
                 name: user.name,
+                _id: user._id
                 
             })
     }
