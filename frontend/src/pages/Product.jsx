@@ -13,18 +13,14 @@ function Product() {
             const fileData = document.getElementById('file').files[0];
             console.log(fileData);
             formData.append('file', fileData);
-            const response = fetch('http://localhost:8000/product/image', {
-              method: "POST",
-              
-              body:formData
-          });
-  
+          
             const product = {
                 image,
                 name,
                 price,
                 quantity,
-                token
+                token,
+                formData
             }
           if(!image && !name && !price && !quantity){
           alert("Please fill all the fields");
@@ -39,9 +35,9 @@ function Product() {
                 })
                 .then(res => res.json())
                 .then(data => {
-                    alert(data);
+                    console.log(data);
                 })
-                window.location.reload();
+                
           }
           catch(err){
                       console.log(err);
