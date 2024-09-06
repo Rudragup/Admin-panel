@@ -6,5 +6,5 @@ const Route=require('express').Router();
 
 Route.post('/add_product',upload.single('file'),add_product);
 
-Route.get('/details',products);
+Route.post('/details',products);
 module.exports=Route;

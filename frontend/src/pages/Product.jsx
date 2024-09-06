@@ -26,18 +26,16 @@ function Product() {
           alert("Please fill all the fields");
           }
           try{
-             fetch("http://localhost:8000/product/add_product", {
+          const response=   fetch("http://localhost:8000/product/add_product", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(product)
                 })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                })
-                
+              .then(res => res.json())
+              .then(data => console.log(data))
+                window.location.reload();
           }
           catch(err){
                       console.log(err);

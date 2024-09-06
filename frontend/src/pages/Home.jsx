@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { handleError, handleSuccess } from '../util';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import axios from 'axios';
+
 
 function Home() {
     const [loggedInUser, setLoggedInUser] = useState('');
@@ -12,7 +12,7 @@ function Home() {
     useEffect(() => {
         setLoggedInUser(localStorage.getItem('loggedInUser'));
     }, [])
-
+const userid=localStorage.getItem('loggedInId');
     const handleLogout = (e) => {
         localStorage.removeItem('token');
         localStorage.removeItem('loggedInUser');
@@ -24,10 +24,19 @@ function Home() {
     const [pro,setPro]=useState([]);
     useEffect( ()=>{
         const list= async () =>{
-         try{
-              const res=await axios.get("http://localhost:8000/product/details");
-            console.log(res.data);
-          setPro(res.data);
+          
+            try{
+              const res=await fetch('http://localhost:8000/product/details',{
+                method:"POST",
+                headers:{
+                  "Content-Type":"application/json"
+                },
+                body:JSON.stringify({userid})
+              })
+              const res1=await res.json();
+              console.log(res1.products)
+              setPro(res1.products);
+           
          }
          catch(err){
            console.log(err)
@@ -43,7 +52,7 @@ function Home() {
                 {pro.map((item)=>{
                     return(
                         <div className='card1' key={item._id}>
-                            <img src={item.image} alt="image" />
+                            <img src='./1.png' />
                             <h3>{item.name}</h3>
                             <h4>{item.price}</h4>
                              <h4>{item.quantity}</h4>

@@ -2,11 +2,13 @@ body{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    background-color: rgb(2, 1, 36);
+    color: white;
 }
 .card {
-    border: 2px solid red;
     width: 60vw;
     display: flex;
+
 }
 .card .a {
     display: flex;
@@ -18,8 +20,16 @@ body{
 }
 .card .a button{
     margin-right: 10px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    /* right: 100%  ; */
 }
 .card1{
-    border: 2px solid red;
+color: brown;
     display: flex;
 }
+.card1 a{
+    color: rgb(255, 255, 255);
+        display: flex;
+    }
