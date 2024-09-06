@@ -45,13 +45,15 @@ const check=await fetch("http://localhost:8000/admin/apporve",{
 
 <div className="card bg-base-100 w-96 shadow-xl">
   <div className="card-body a">
-    <h2 className="card-title">{val.name}</h2>
-    <h2 className="card-title">{val.email}</h2>
-    <div className="card-actions justify-end">
-      
+
+    <td><h2 className="card-title">{val.name}</h2>
+  </td>  <td> <h2 className="card-title">{val.email}</h2> </td>
+   <td>
+     <div className="card-actions justify-end">
       <button className="btn btn-primary" id={val._id} onClick={Apporved}>Apporved</button>
-   
     </div>
+ </td>    
+ <td> <h2 className="card-title">{val.createdAt}</h2> </td>  
   </div>
 </div>
      </>

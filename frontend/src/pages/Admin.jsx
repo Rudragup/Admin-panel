@@ -22,16 +22,25 @@ function Admin() {
    <>
    <div className='admin'>
    <h1>Admin Panel</h1>
-   <div>
+   <div className='admin-card'>
+   <table>
+        <tr>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Approvation</th>
+        <th>Created At</th>
+      </tr>
+      
     {details.map((item)=>{
       console.log(item)
       console.log(item.email);
       if(item.email==="rudragupta077@gmail.com"){
         return null
       }
-    else  return <Card val={item} />
+    else  return <tr><Card val={item} /></tr>
      })}
-
+    
+</table>
    </div>
    </div>
    </>

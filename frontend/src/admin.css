@@ -5,6 +5,56 @@ body{
     background-color: rgb(2, 1, 36);
     color: white;
 }
+.admin{
+    width: 100vw;
+    height: 100vh;
+    padding: 2%;
+}
+.admin h1{
+width: 96vw;
+margin-bottom: 14px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.admin .admin-card{
+    border: 2px solid white; 
+}
+.admin .admin-card table{
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+
+.admin .admin-card table tr{
+ 
+}
+.admin .admin-card table tr th{
+    font-size: 25px;
+    width: 50vw;
+}
+
+.admin .admin-card table tr td{
+ 
+    font-size: 14px;
+    width: 24vw;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.admin .admin-card table tr td div button{  
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+}
+
+
 .card {
     width: 60vw;
     display: flex;

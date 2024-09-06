@@ -60,7 +60,7 @@ function Product() {
       }
   return (
     <>
-    <div>
+    <div className='container'>
         <form onSubmit={handleproduct}>
             <input type="file" id="file" onChange={changeImage} value={image}/>
             Name :<input type="name" value={name} onChange={changeName} />

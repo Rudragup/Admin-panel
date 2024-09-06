@@ -1,0 +1,37 @@
+
+.home{
+ margin: 0;
+    width: 99vw;
+    height: 100vh;
+}
+.home h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+.home table div{
+    width: 100vw;
+}
+.home table tr td{
+ 
+    width: 18vw;
+    margin: 10px;
+    padding: 10px;
+}
+
+td{
+    text-align: center;
+}
+
+
+.button{
+    display: flex;  
+    justify-content: space-around;
+  padding: 10px;
+    align-items: end;
+}
+

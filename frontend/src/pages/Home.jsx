@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { handleError, handleSuccess } from '../util';
+import './Home.css'
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
@@ -45,26 +46,43 @@ const userid=localStorage.getItem('loggedInId');
         list();
      },[])
     return (
-        <div>
+        <div className='home'>
             <h1>Welcome {loggedInUser}</h1>
-            
-              <div className='container'>
+            <table>
+            <tr>
+                <div >
+                <td>Product-Image</td>
+                <td>Product-Name</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                <td>Created At</td>
+                </div>
+             
+            </tr>
+              <div>
                 {pro.map((item)=>{
                     return(
-                        <div className='card1' key={item._id}>
-                            <img src='./1.png' />
-                            <h3>{item.name}</h3>
-                            <h4>{item.price}</h4>
-                             <h4>{item.quantity}</h4>
+                        <div  key={item._id}>
+            <tr>
+                         <td><img src='./1.png' /> </td>
+                          <td>  <h3>{item.name}</h3> </td>
+                          <td>  <h4>{item.price}</h4> </td>
+                         <td>    <h4>{item.quantity}</h4>   </td>
+                         <td>    <h4>{item.createdAt}</h4>   </td>
+                             </tr>
                         </div>
                     )
                 })}
-                </div>
 
-            <button><Link to='/add_products'>Add_products</Link></button>
+   <div className='button'>       
+     <button><Link to='/add_products'>Add_products</Link>
+   
+   </button>
 
             <button onClick={handleLogout}>Logout</button>
-           
+                </div>
+                </div>
+           </table>
             <ToastContainer />
         </div>
     )
