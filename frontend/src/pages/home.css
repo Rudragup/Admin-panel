@@ -35,3 +35,7 @@ td{
     align-items: end;
 }
 
+img{
+    background-color: red;
+    width: 30vw;
+}

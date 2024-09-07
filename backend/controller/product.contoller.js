@@ -1,9 +1,15 @@
 const product=require("../Model/product.model");
 const user=require("../Model/User");
 const jwt=require("jsonwebtoken");
+
+
+
 const add_product = async (req,res)=>{
 try{
-const {image,name,price,quantity,token}=req.body;
+    console.log(req.body);
+    console.log(req.file.path);
+    const image=req.file.path;
+const {name,price,quantity,token}=req.body;
 
 const check=await product.findOne({name});
 if(check){

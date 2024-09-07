@@ -13,7 +13,11 @@ function Product() {
             const fileData = document.getElementById('file').files[0];
             console.log(fileData);
             formData.append('file', fileData);
-          
+            formData.append('name', name)
+            formData.append('price', price)
+            formData.append('quantity', quantity)
+            formData.append('token', token)
+           console.log(formData)
             const product = {
                 image,
                 name,
@@ -28,14 +32,12 @@ function Product() {
           try{
           const response=   fetch("http://localhost:8000/product/add_product", {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(product)
+                  
+                    body: formData
                 })
               .then(res => res.json())
               .then(data => console.log(data))
-                window.location.reload();
+                // window.location.reload();
           }
           catch(err){
                       console.log(err);
