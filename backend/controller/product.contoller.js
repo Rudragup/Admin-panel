@@ -8,7 +8,21 @@ const add_product = async (req,res)=>{
 try{
     console.log(req.body);
     console.log(req.file.path);
-    const image=req.file.path;
+
+
+    // Your file path string
+const filePath = req.file.path;
+
+// Find the position of the last backslash
+const lastBackslashIndex = filePath.lastIndexOf('\\');
+
+// Slice the string to get everything after the last backslash
+const fileName = filePath.substring(lastBackslashIndex + 1);
+
+
+
+
+    const image=fileName;
 const {name,price,quantity,token}=req.body;
 
 const check=await product.findOne({name});

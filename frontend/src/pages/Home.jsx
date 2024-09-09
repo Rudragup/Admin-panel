@@ -59,13 +59,13 @@ const userid=localStorage.getItem('loggedInId');
                 </div>
              
             </tr>
-              <div>
+             
                 {pro.map((item)=>{
                     const path=item.image;
                     return(
                         <div  key={item._id}>
             <tr>
-                         <td><img src= {path}/> </td>
+                         <td><img src={`http://localhost:8000/images/${path}`} alt="Girl in a jacket"/> </td>
                           <td>  <h3>{item.name}</h3> </td>
                           <td>  <h4>{item.price}</h4> </td>
                          <td>    <h4>{item.quantity}</h4>   </td>
@@ -82,7 +82,7 @@ const userid=localStorage.getItem('loggedInId');
 
             <button onClick={handleLogout}>Logout</button>
                 </div>
-                </div>
+               
            </table>
             <ToastContainer />
         </div>
