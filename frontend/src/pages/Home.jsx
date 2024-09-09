@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { handleError, handleSuccess } from '../util';
 import './Home.css'
 import { Link } from 'react-router-dom';
@@ -49,34 +50,34 @@ const userid=localStorage.getItem('loggedInId');
         <div className='home'>
             <h1>Welcome {loggedInUser}</h1>
             <table>
+            <div>
             <tr>
-                <div >
-                <td>Product-Image</td>
-                <td>Product-Name</td>
-                <td>Price</td>
-                <td>Quantity</td>
-                <td>Created At</td>
-                </div>
              
             </tr>
              
                 {pro.map((item)=>{
                     const path=item.image;
                     return(
-                        <div  key={item._id}>
+                        <div className='box'  key={item._id}>
             <tr>
-                         <td><img src={`http://localhost:8000/images/${path}`} alt="Girl in a jacket"/> </td>
-                          <td>  <h3>{item.name}</h3> </td>
-                          <td>  <h4>{item.price}</h4> </td>
-                         <td>    <h4>{item.quantity}</h4>   </td>
-                         <td>    <h4>{item.createdAt}</h4>   </td>
+                         <td className='image'><img src={`http://localhost:8000/images/${path}`} /> </td>
+                         <div className='con'> <td className='content'>  <h3>Name:{item.name}</h3> </td>
+                          <td className='content'>  <h4>Price:{item.price}</h4> </td>
+                         <td className='content'>    <h4>Quantity:{item.quantity}</h4>   </td>
+                         </div>
+                    
                              </tr>
                         </div>
                     )
                 })}
 
+                </div>
    <div className='button'>       
      <button><Link to='/add_products'>Add_products</Link>
+   
+   </button>
+
+   <button><Link to='/buy_products'>Buy_products</Link>
    
    </button>
 

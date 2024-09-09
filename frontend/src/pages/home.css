@@ -8,19 +8,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-bottom: 10px;
     margin-top: 50px;
 }
 
-.home table div{
-    width: 100vw;
-}
 .home table tr td{
- 
-    width: 18vw;
+
+ text-align: center;
+    width: 20vw;
     margin: 10px;
     padding: 10px;
+
 }
 
 td{
@@ -36,6 +34,24 @@ td{
 }
 
 img{
-    background-color: red;
-    width: 30vw;
+
+    width: 40vw;
+   
+}
+.image{
+    width: 40vw;
+}
+
+ .content{
+display: flex;
+
+justify-content: center;
+align-items: center;
+
+} 
+.con{
+ 
+    width: 25vw;
+    position: relative;
+    top: -9rem;
 }

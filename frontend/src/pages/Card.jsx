@@ -39,7 +39,8 @@ const check=await fetch("http://localhost:8000/admin/apporve",{
 
     
 }
-
+const date=val.createdAt;
+const vaal=date.slice(0,10);
   return (
      <>
 
@@ -53,7 +54,7 @@ const check=await fetch("http://localhost:8000/admin/apporve",{
       <button className="btn btn-primary" id={val._id} onClick={Apporved}>Apporved</button>
     </div>
  </td>    
- <td> <h2 className="card-title">{val.createdAt}</h2> </td>  
+ <td> <h2 className="card-title">{vaal}</h2> </td>  
   </div>
 </div>
      </>
