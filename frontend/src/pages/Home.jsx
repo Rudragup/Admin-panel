@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { handleError, handleSuccess } from '../util';
+import Notification from './Notification';
+
 import './Home.css'
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -10,11 +12,17 @@ import { ToastContainer } from 'react-toastify';
 function Home() {
     const [loggedInUser, setLoggedInUser] = useState('');
 
+    
+
     const navigate = useNavigate();
     useEffect(() => {
         setLoggedInUser(localStorage.getItem('loggedInUser'));
     }, [])
+
+
 const userid=localStorage.getItem('loggedInId');
+
+
     const handleLogout = (e) => {
         localStorage.removeItem('token');
         localStorage.removeItem('loggedInUser');
@@ -48,8 +56,8 @@ const userid=localStorage.getItem('loggedInId');
      },[])
     return (
         <div className='home'>
-            <h1>Welcome {loggedInUser}</h1>
             <table>
+            <h1>Welcome {loggedInUser}</h1>
             <div>
             <tr>
              
@@ -85,6 +93,7 @@ const userid=localStorage.getItem('loggedInId');
                 </div>
                
            </table>
+           <div id="Notification"><Notification /></div>  
             <ToastContainer />
         </div>
     )

@@ -6,3 +6,46 @@
     align-items: center;
     font-size: 15px;
 }
+#Notification{
+    width: 10vw;
+    background-color: yes;
+}
+#Notification button{
+background-color: yellow;
+color: black;
+font-size: 30px;
+
+}
+/* .Notification div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+    border: 2px solid blue;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    text-align: center;
+} */
+
+.mes{
+display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(230, 15, 15);
+    color: rgb(0, 0, 0);
+
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    position: relative;
+    top:-4em;
+    right: -2em;
+}
+
+
+
+

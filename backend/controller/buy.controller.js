@@ -1,4 +1,7 @@
 const Product=require('../Model/product.model');
+const messageModel=require('../Model/message.model');
+
+
 const jwt=require('jsonwebtoken');
 const user=require('../Model/User');
 const buy=async(req,res)=>{
@@ -25,6 +28,14 @@ console.log("hii");
 const userid=us._id;
 
 const userProduct=new Product({image,name,price,quantity,token,userid});
+const message=`Total amount is ${price*quantity} and quantity is ${quantity}`
+
+const Product_name=userProduct.name;
+const username=us.name;
+
+
+const message1=new messageModel({message,userid,Product_name,username});
+await message1.save();
 
 userProduct.name=name.concat('s');
 const check=await Product.findOne({name:userProduct.name});
