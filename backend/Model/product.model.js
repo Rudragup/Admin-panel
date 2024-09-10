@@ -10,7 +10,7 @@ image:{
 name:{
     required:true,
     type:String,
-    unique:true
+    unique:false
 },
 price:{
     required:true,

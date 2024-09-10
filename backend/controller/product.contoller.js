@@ -25,13 +25,7 @@ const fileName = filePath.substring(lastBackslashIndex + 1);
     const image=fileName;
 const {name,price,quantity,token}=req.body;
 
-const check=await product.findOne({name});
-if(check){
-return res.json({
-    message:"product already exist",
-    success:false
-})
-}
+
 const decoded =jwt.decode(token);
 console.log(decoded._id);
 
