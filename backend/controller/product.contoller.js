@@ -52,8 +52,8 @@ catch(err){
 
 const products=async(req,res)=>{
     try{
-        const {userid}=req.body;
-    const products=await product.find({userid});
+    const {userid}=req.body;
+    const products=await product.find({userid}).populate('userid');
     console.log(products);
     res.json({products});
     }
