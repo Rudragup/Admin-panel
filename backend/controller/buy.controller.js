@@ -8,7 +8,7 @@ const buy=async(req,res)=>{
 
 try{
 const {productId,quantity,token1}=req.body;
-
+console.log(productId,quantity,token1);
 const product=await Product.findById(productId);
 if(!product){
     return res.status(404).json({message:"product not found"})
